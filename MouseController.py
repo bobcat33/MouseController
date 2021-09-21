@@ -10,7 +10,7 @@ except:
     using_pyautogui = False
 
 class MouseController:
-    def __init__(self, recentre=True):
+    def __init__(self, recentre=False):
         # DO NOT MODIFY ------------------
         self.alt_down = False
         self.pressing = [False] * 5
