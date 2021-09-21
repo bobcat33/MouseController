@@ -20,3 +20,7 @@ When changing keybinds I have included a list of keys in a .txt file along with 
 The order of the keybinds is `[ MAIN , UP , DOWN , LEFT , RIGHT , CLICK ]`.
 
 The variable `toggle` determines whether or not the `MAIN` key acts as a toggle (if set to True) for the mouse controls or if you need to hold it down (if set to False) to be able to use the mouse controls. 
+
+<a name="usage"></a>
+## Usage ##
+When the `toggle` variable is set to `True` you can press the `MAIN` key to control the mouse using the `UP, DOWN, LEFT, RIGHT, CLICK` keys and press it again to disable the controls. If the `toggle` variable is set to `False` you have to hold down the `MAIN` key to use these controls.
