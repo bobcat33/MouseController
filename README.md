@@ -24,3 +24,5 @@ The variable `toggle` determines whether or not the `MAIN` key acts as a toggle 
 <a name="usage"></a>
 ## Usage ##
 When the `toggle` variable is set to `True` you can press the `MAIN` key to control the mouse using the `UP, DOWN, LEFT, RIGHT, CLICK` keys and press it again to disable the controls. If the `toggle` variable is set to `False` you have to hold down the `MAIN` key to use these controls.
+
+When the MouseController#start() function is run the code will re-centre the mouse on your screen - this requires [pyautogui](https://pypi.org/project/PyAutoGUI/) to be installed but is not necessary. If you want the code not to re-centre your mouse you can initialise the class with no parameters - e.g. `mouse = MouseController()`.
