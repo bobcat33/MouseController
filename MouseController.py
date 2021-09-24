@@ -13,7 +13,7 @@ class MouseController:
     def __init__(self, recentre=False):
         # DO NOT MODIFY ------------------
         self.alt_down = False
-        self.pressing = [False] * 5
+        self.pressing = [False] * 6
         self.active = False
         self.mouse = Controller()
         self.can_recentre = recentre
@@ -24,8 +24,8 @@ class MouseController:
         # (can be changed while the code is running to change the speed of the mouse movements should you wish)
         self.speed = 5
         
-        # Keybind order: [ MAIN , UP , DOWN , LEFT , RIGHT , CLICK ]
-        self.keybinds = [keyboard.Key.print_screen, keyboard.Key.up, keyboard.Key.down, keyboard.Key.left, keyboard.Key.right, keyboard.Key.ctrl_r]
+        # Keybind order: [ MAIN , UP , DOWN , LEFT , RIGHT , LEFT_CLICK , RIGHT_CLICK ]
+        self.keybinds = [keyboard.Key.print_screen, keyboard.Key.up, keyboard.Key.down, keyboard.Key.left, keyboard.Key.right, keyboard.Key.ctrl_r, keyboard.Key.shift_r]
         # With toggle set to True the user can enable the mouse control by pressing the MAIN key, when set
         # to false the user has to hold down the MAIN key in order to use the mouse controls
         self.toggle = True
@@ -72,6 +72,10 @@ class MouseController:
             elif key == self.keybinds[5] and self.pressing[4] == False:
                 self.pressing[4] = True
                 self.mouse.press(Button.left)
+            elif key == self.keybinds[6] and self.pressing[5] == False:
+                self.pressing[5] = True
+                self.mouse.press(Button.right)
+
 
         elif key == self.keybinds[0] and self.toggle != True:
             self.alt_down = True
@@ -103,6 +107,9 @@ class MouseController:
         elif key == self.keybinds[5]:
             self.pressing[4] = False
             self.mouse.release(Button.left)
+        elif key == self.keybinds[6]:
+            self.pressing[5] = False
+            self.mouse.release(Button.right)
 
     # Movement functions
     def move_to(self, x, y):
