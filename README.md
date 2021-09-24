@@ -17,12 +17,12 @@ The `speed` variable determines the number of pixels that the mouse travels per 
 
 When changing keybinds I have included a list of keys in a .txt file along with the Python program, to use any of these keys you can use the format `keyboard.Key.[key]` [(reference)](https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key). To include conventional keys replace the `keyboard.Key.[key]` with `keyboard.KeyCode.from_char('[key]')`.
 
-The order of the keybinds is `[ MAIN , UP , DOWN , LEFT , RIGHT , CLICK ]`.
+The order of the keybinds is `[ MAIN , UP , DOWN , LEFT , RIGHT , LEFT_CLICK , RIGHT_CLICK ]`.
 
 The variable `toggle` determines whether or not the `MAIN` key acts as a toggle (if set to True) for the mouse controls or if you need to hold it down (if set to False) to be able to use the mouse controls. 
 
 <a name="usage"></a>
 ## Usage ##
-When the `toggle` variable is set to `True` you can press the `MAIN` key to control the mouse using the `UP, DOWN, LEFT, RIGHT, CLICK` keys and press it again to disable the controls. If the `toggle` variable is set to `False` you have to hold down the `MAIN` key to use these controls.
+When the `toggle` variable is set to `True` you can press the `MAIN` key to control the mouse using the `UP, DOWN, LEFT, RIGHT, LEFT_CLICK, RIGHT_CLICK` keys and press it again to disable the controls. If the `toggle` variable is set to `False` you have to hold down the `MAIN` key to use these controls.
 
 When the MouseController#start() function is run the code will re-centre the mouse on your screen - this requires [pyautogui](https://pypi.org/project/PyAutoGUI/) to be installed but is not necessary. If you want the code not to re-centre your mouse you can initialise the class with no parameters - e.g. `mouse = MouseController()`.
